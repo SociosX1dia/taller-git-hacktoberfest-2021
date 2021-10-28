@@ -1,0 +1,96 @@
+#menutoggle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-bottom-width: 0px;
+    top: 3px;
+    right: 3px;
+    z-index: 1;
+}
+
+#arrow {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#arrow::before, #arrow::after {
+    content: "";
+    width: 10px;
+    height: 4px;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    background-color: black;
+    transition: all 0.5s;
+}
+
+#arrow::before {
+    transform: rotate(30deg) translateX(-5px) translateY(-2px);
+}
+
+#arrow::after {
+    transform: rotate(-30deg) translateX(5px) translateY(-2px);
+}
+
+#menutoggle:hover ~ #arrow::before, #menutoggle:hover ~ #arrow::after,
+#animatedmenu:hover ~ #arrow::before, #animatedmenu:hover ~ #arrow::after {
+    top: 4px;
+}
+
+#menutoggle:hover ~ #arrow::before, #animatedmenu:hover ~ #arrow::before {
+    transform: rotate(-30deg) translateX(-5px) translateY(2px);
+}
+
+#menutoggle:hover ~ #arrow::after, #animatedmenu:hover ~ #arrow::after {
+    transform: rotate(30deg) translateX(5px) translateY(2px);
+}
+
+#animatedmenu {
+    transition: all 0.5s;
+    width: 20px;
+    position: absolute;
+    max-height: 0px;
+    top: 23px;
+    right: 3px;
+    bottom: 3px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#menutoggle:hover + #animatedmenu, #animatedmenu:hover {
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    /* height is computed using js -_- */
+}
+
+#menu {
+    width: 200px;
+    overflow: auto;
+}
+
+#orbitmode, #freemode {
+    width: 100px;
+    height: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+    float: left;
+}
+
+#freemode {
+    border-left-width: 0px;
+}
+
+#cammode {
+    margin-top: 3px;
+}
+
+button.selected {
+    background-color: rgb(255, 255, 255);
+}

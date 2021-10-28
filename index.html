@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Socios x 1 día</title>
+        <script src="js/consts.js"></script>
+        <script src="js/math.js"></script>
+        <script src="js/3d.js"></script>
+        <script src="js/load.js"></script>
+        <script src="js/interact.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/render.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/menuanimate.js"></script>
+        <link rel="stylesheet" href="css/ui.css"/>
+        <link rel="stylesheet" href="css/fileprompt.css"/>
+        <link rel="stylesheet" href="css/menu.css"/>
+    </head>
+    <body>
+        <canvas id="c"></canvas>
+        <div class="ui" id="fileprompt" hidden>
+            <span>Elija el fichero STL que desea subir</span>
+            <br/>
+            <span id="filename"></span>
+            <br/>
+            <button class="ui" id="browse">Cargar</button>
+            <button class="ui" id="ok">OK</button>
+        </div>
+        <div class="ui" id="menutoggle"></div>
+        <div class="ui" id="animatedmenu">
+            <div id="menu">
+                <span>Cámara</span>
+                <br/>
+                <div id="cammode">
+                    <button class="ui selected" id="orbitmode">Ortogonal</button>
+                    <button class="ui" id="freemode">Cámara libre</button>
+                </div>
+            </div>
+        </div>
+        <div id="arrow"></div>
+    </body>
+</html>
